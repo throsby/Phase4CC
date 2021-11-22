@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function VendorSweetForm({ vendorId, handleAddSweet }) {
+function VendorSweetForm({ vendorId, onAddSweet }) {
   const [sweets, setSweets] = useState([]);
   const [sweetId, setSweetId] = useState("");
   const [price, setPrice] = useState("");
@@ -27,7 +27,7 @@ function VendorSweetForm({ vendorId, handleAddSweet }) {
       body: JSON.stringify(formData),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((sweet) => handleAddSweet(sweet));
+        r.json().then((sweet) => onAddSweet(sweet));
       } else {
         r.json().then((err) => setFormErrors(err.errors));
       }
@@ -50,7 +50,7 @@ function VendorSweetForm({ vendorId, handleAddSweet }) {
           </option>
         ))}
       </select>
-      <label htmlFor="strength">Price:</label>
+      <label htmlFor="strength">Price (in cents):</label>
       <input
         type="number"
         id="price"

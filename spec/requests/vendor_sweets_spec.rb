@@ -68,7 +68,7 @@ RSpec.describe 'VendorSweets', type: :request do
   describe 'DELETE /vendor_sweet/:id' do
     context 'with a valid ID' do
       it 'deletes the vendor_sweet' do
-        delete "/vendor_sweet/#{VendorSweet.first.id}"
+        delete "/vendor_sweets/#{VendorSweet.first.id}"
 
         expect(response.body).to include_json({})
       end
@@ -76,7 +76,7 @@ RSpec.describe 'VendorSweets', type: :request do
 
     context 'with an invalid ID' do
       it 'returns an error message' do
-        delete '/vendor_sweet/bad_id'
+        delete '/vendor_sweets/bad_id'
 
         expect(response.body).to include_json(
           { error: 'VendorSweet not found' },
@@ -84,11 +84,12 @@ RSpec.describe 'VendorSweets', type: :request do
       end
 
       it 'does not delete any VendorSweet' do
-        expect { delete '/vendor_sweets' }.to change(VendorSweet, :count).by(0)
+        expect { delete '/vendor_sweets/bad_id' }.to change(VendorSweet, :count)
+          .by(0)
       end
 
       it 'returns the appropriate HTTP status code' do
-        delete '/vendor_sweet/bad_id'
+        delete '/vendor_sweets/bad_id'
 
         expect(response).to have_http_status(:not_found)
       end

@@ -4,7 +4,7 @@ function Sweet({ sweet, onRemoveSweet }) {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
-        r.json().then((sweet) => onRemoveSweet(sweet));
+        onRemoveSweet(sweet);
       } else {
         r.json().then((err) => alert(err.errors));
       }
@@ -13,9 +13,8 @@ function Sweet({ sweet, onRemoveSweet }) {
 
   return (
     <li>
-      <span>
-        {sweet.name} | ${(sweet.price / 100).toFixed(2)}
-      </span>
+      <span>{sweet.name}</span>
+      <span>${(sweet.price / 100).toFixed(2)}</span>
       <button onClick={() => handleRemoveSweet(sweet)}>Delete</button>
     </li>
   );

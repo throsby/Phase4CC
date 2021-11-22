@@ -116,7 +116,7 @@ If the `Vendor` exists, return JSON data in the format below:
     },
     {
       "id": 6,
-      "name": "Chocolate Chunk Cookies",
+      "name": "Brownies",
       "price": 300
     }
   ]
@@ -144,7 +144,7 @@ Return JSON data in the format below:
   },
   {
     "id": 2,
-    "name": "Chocolate Chunk Cookie"
+    "name": "Brownie"
   }
 ]
 ```

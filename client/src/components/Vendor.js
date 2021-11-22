@@ -27,17 +27,18 @@ function Vendor() {
 
   function handleAddSweet(sweet) {
     setVendor({
-      data: { ...vendor, sweets: [...vendor.sweets, sweet] },
+      data: { ...vendor, vendor_sweets: [...vendor.vendor_sweets, sweet] },
       error: null,
       status: "resolved",
     });
   }
 
   function handleRemoveSweet(sweet) {
+    debugger;
     setVendor({
       data: {
         ...vendor,
-        sweets: vendor.sweets.filter((s) => s.id !== sweet.id),
+        vendor_sweets: vendor.vendor_sweets.filter((s) => s.id !== sweet.id),
       },
       error: null,
       status: "resolved",

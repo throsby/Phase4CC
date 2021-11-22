@@ -54,7 +54,7 @@ RSpec.describe 'Sweets', type: :request do
       end
 
       it 'returns the appropriate HTTP status code' do
-        get '/sweet/bad_id'
+        get '/sweets/bad_id'
         expect(response).to have_http_status(:not_found)
       end
     end
