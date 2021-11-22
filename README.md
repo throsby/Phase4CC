@@ -123,6 +123,9 @@ If the `Vendor` exists, return JSON data in the format below:
 }
 ```
 
+**Note**: The `name` attribute in the `vendor_sweets` array represents the name
+of the `Sweet` that the `VendorSweet` belongs to.
+
 If the `Vendor` does not exist, return the following JSON data, along with the
 appropriate HTTP status code:
 
@@ -193,6 +196,9 @@ following data:
   "price": 300
 }
 ```
+
+**Note**: The `name` attribute in the response represents the name of the
+`Sweet` that the `VendorSweet` belongs to.
 
 If the `VendorSweet` is **not** created successfully, return the following JSON
 data, along with the appropriate HTTP status code:
