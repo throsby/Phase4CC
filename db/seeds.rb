@@ -19,7 +19,7 @@ Sweet.create(
     { name: 'M&Ms Cookie' },
     { name: 'White Chocolate Cookie' },
     { name: 'Brownie' },
-    { name: 'Peanut Butter Icecream Cake' },
+    { name: 'Peanut Butter Ice Cream Cake' },
   ],
 )
 
