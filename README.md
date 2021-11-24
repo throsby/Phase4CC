@@ -59,8 +59,6 @@ You need to create the following relationships:
 
 Start by creating the models and migrations for the following database tables:
 
-<!-- TODO: update diagram -->
-
 ![domain diagram](domain.png)
 
 If you use a Rails generator to create the models, make sure to use the
